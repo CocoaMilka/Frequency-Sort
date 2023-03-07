@@ -16,7 +16,7 @@ def findMax(A):
             max = i
     return max
 
-# Quick Sort Functions
+# Modified Quick Sort Functions
 def Partition(A, p, r):
     x = A[r].frequency
     i = p - 1
@@ -36,17 +36,14 @@ def QuickSort(A, p, r):
         QuickSort(A, p, q - 1)
         QuickSort(A, q + 1, r)
 
+# REAL CODE STARTS HERE #
 
-# test_array = [3, 5, 2, 1, 0, 1, 2, 3, 4, 2, 0, 3, 4, 2, 1]
-test_array = [99, 99, 99, 5, 5, 5, 1, 101, 1, 1, 3, 3, 3, 8, 101, 8, 8, 4, 4, 4, 4, 101]
-
-print("Max element: ",findMax(test_array))
+test_array = [3, 5, 2, 1, 0, 1, 2, 3, 4, 2, 0, 3, 4, 2, 1]
+#test_array = [99, 99, 99, 5, 5, 5, 1, 101, 1, 1, 3, 3, 3, 8, 101, 8, 8, 4, 4, 4, 4, 101]
 
 sorted_array = []
-
-frequency = [0] * (findMax(test_array) + 1)
-
 node_array = []
+frequency = [0] * (findMax(test_array) + 1)
 
 # Value at index is how many times each index number appears
 for i in test_array:
@@ -66,10 +63,3 @@ for i in node_array:
         sorted_array.append(i.value)
 
 pprint(sorted_array)
-
-
-'''
-for i in node_array:
-    print("Value: ", i.value)
-    print("Frequency: ", i.frequency)
-'''
